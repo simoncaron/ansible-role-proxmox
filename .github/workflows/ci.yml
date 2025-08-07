@@ -45,6 +45,7 @@ jobs:
     steps:
       - uses: easimon/maximize-build-space@v10
         with:
+          root-reserve-mb: 10240
           build-mount-path: /var/lib/libvirt/images
           build-mount-path-ownership: 'root:root'
       - uses: actions/checkout@v4
