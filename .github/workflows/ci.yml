@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: easimon/maximize-build-space@v10
         with:
-          overprovision-lvm: 'true'
+          build-mount-path: /var/lib/libvirt/images
       - uses: actions/checkout@v4
       - run: sudo apt install nfs-kernel-server
       - run: sudo pipx inject ansible-core jmespath netaddr
