@@ -44,6 +44,10 @@ jobs:
     if: ${{ needs.changes.outputs.role == 'true' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-22.04
     steps:
+      - name: Remove unnecessary files
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - uses: actions/checkout@v4
       - run: sudo apt install nfs-kernel-server
       - run: sudo pipx inject ansible-core jmespath netaddr
