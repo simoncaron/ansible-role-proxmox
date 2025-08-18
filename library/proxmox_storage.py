@@ -557,7 +557,7 @@ def main():
                            "zfspool", "btrfs", "pbs", "cifs"]),
         # Remaining PVE API arguments (depending on type) past this point
         datastore=dict(default=None, type='str', required=False),
-        encryption_key=dict(default=None, type='str', required=False, no_log=True),
+        encryption_key=dict(default=None, type='jsonarg', required=False, no_log=True),
         fingerprint=dict(default=None, type='str', required=False),
         master_pubkey=dict(default=None, type='str', required=False),
         password=dict(default=None, type='str', required=False, no_log=True),
